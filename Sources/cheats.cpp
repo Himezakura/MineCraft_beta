@@ -152,8 +152,8 @@ void ame_yamu(MenuEntry *entry){
 
 //雷降らす(強制)
 void kaminari(MenuEntry *entry){
-	Keyboard key("雨が降っているときに有効", {"雷降らす(強制)", "雷降らす(強制)オフ", "雷降った時のact固定",　"雷降った時のact固定オフ"});
- int B = key.Open();
+	Keyboard key("雨が降っているときに有効", {"雷降らす(強制)", "雷降らす(強制)オフ", "雷降った時のact固定",  "雷降った時のact固定オフ"});
+ int B = Key.Open();
   if (B == 0) {
    Process::Write32(0x064968C, 0xE1A00000);
   } else if (B == 1) {
