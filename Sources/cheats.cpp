@@ -141,7 +141,7 @@ void jikan_henkou(MenuEntry *entry){
 
 //天候変更(雨止む)
 void ame_yamu(MenuEntry *entry){
-	Keyboard key("雨が降っている時にオン, {"オン", "オフ"});
+	Keyboard key("雨が降っている時にオン", {"オン", "オフ"});
  int B = key.Open();
   if (B == 0) {
    Process::Write32(0x0649690, 0x00000000);
