@@ -100,6 +100,7 @@ namespace CTRPluginFramework
 			new MenuEntry("世界透化",nullptr,sekai_toumei),
 			new MenuEntry("時間変更",nullptr,jikan_henkou),
 			new MenuEntry("時間逆変更",nullptr,jikan_gyaku),
+			new MenuEntry("雨止む",nullptr,ame_yamu),
 			new MenuEntry("雷降らす(強制)/act固定",nullptr,kaminari),
 			new MenuEntry("霧の色変更",nullptr,kiri_color),
 		});
