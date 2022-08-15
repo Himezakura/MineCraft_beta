@@ -185,7 +185,7 @@ void kiri_color(MenuEntry *entry){
    Process::Write32(0x07393C4, 0x00000000);
    Process::Write32(0x07393C8, 0x00000000);
    Process::Write32(0x07393CC, 0x40000000);
-  }　else if (B == 4) {
+  } else if (B == 4) {
    Process::Write32(0x07393C4, 0x40000000);
    Process::Write32(0x07393C8, 0x40000000);
    Process::Write32(0x07393CC, 0x00000000);
@@ -234,7 +234,7 @@ void item_slot_ookisa(MenuEntry *entry){
    Process::Write32(0x01ED0D4, 0x40B00000);
   } else if (B == 1) {
    Process::Write32(0x01ED0D4, 0x40000000);
-　　} else if (B == 2) {
+  } else if (B == 2) {
    Process::Write32(0x01ED0D4, 0x3F500000);
 }}
 
