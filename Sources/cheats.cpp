@@ -1,7 +1,7 @@
 #include "cheats.hpp"
 
 //あらかじめ、file.binに00223300を書き込んでおく
-File file;
+File developer;
 u32 buf;
 File::Open(file,"developer.bin");//developer.binを開く
 file.Read((void*)&buf, sizeof(u32));//bufにdeveloper.binの内容をu32のサイズ(4byte)分読み込む
