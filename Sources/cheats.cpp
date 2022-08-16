@@ -1,5 +1,13 @@
 #include "cheats.hpp"
 
+//あらかじめ、file.binに00223300を書き込んでおく
+File file;
+u32 buf;
+File::Open(file,"developer.bin");//developer.binを開く
+file.Read((void*)&buf, sizeof(u32));//bufにdeveloper.binの内容をu32のサイズ(4byte)分読み込む
+file.Close();//developer.binを閉じる
+//buf = 00223300;
+
 namespace CTRPluginFramework
 {
 	/* 記述例
@@ -17,7 +25,7 @@ namespace CTRPluginFramework
 	if (Controller::IsKeysDown(A))　{} ボタン実行
 	*/
 
-
+if (buf == 00223300){
 //スピードハック1
 void speed1(MenuEntry *entry){
 	Keyboard key("走りながらジャンプすると加速します", {"オン", "オフ"});
@@ -26,7 +34,7 @@ void speed1(MenuEntry *entry){
    Process::Write32(0x019870C, 0x3F8C8000);
   } else if (B == 1) {
    Process::Write32(0x019870C, 0x3F800000);
-}}
+}}}
 
 
 //スピードハック2
@@ -190,12 +198,12 @@ void kiri_color(MenuEntry *entry){
    Process::Write32(0x07393C8, 0x40000000);
    Process::Write32(0x07393CC, 0x00000000);
   } else if (B == 5) {
-   Process::Write32(0x07393C4, 0x00000000);
+   Process::Write32(0x07393C4, 0x70000000);
    Process::Write32(0x07393C8, 0x70000000);
-   Process::Write32(0x07393CC, 0x00000000);
+   Process::Write32(0x07393CC, 0x70000000);
   } else if (B == 6) {
    Process::Write32(0x07393C4, 0x00000000);
-   Process::Write32(0x07393C8, 0x40000000);
+   Process::Write32(0x07393C8, 0x00000000);
    Process::Write32(0x07393CC, 0x00000000);
   } else if (B == 7) {
    Process::Write32(0x07393C4, 0x3F800000);
