@@ -74,6 +74,8 @@ namespace CTRPluginFramework
     {
        menu += new MenuFolder(Color::Lime<< "移動系", "",
 		{
+
+			new MenuEntry("無限ジャンプ",jump_infinity),
 			new MenuEntry("スピードハック1",nullptr,speed1),
 			new MenuEntry("スピードハック2",nullptr,speed2),
 			new MenuEntry("貫通系",nullptr,kantu),
@@ -82,6 +84,7 @@ namespace CTRPluginFramework
 		
 		menu += new MenuFolder(Color::Lime<< "ブロック系","",
 		{
+			new MenuEntry("ブロックドロップ倍率変更",nullptr,block_bairitu),
 			new MenuEntry("ブロックワンパン(拳)",nullptr,block_wanpan),
 			new MenuEntry("ブロックワンパン(アイテム)",nullptr,block_wanpan_turuhasi),
 		});
@@ -89,6 +92,7 @@ namespace CTRPluginFramework
 		
 		menu += new MenuFolder(Color::Lime<< "アイテム系","",
 		{
+			new MenuEntry("アイテムスロット白くなる",nullptr,item_slot_siroi),
 			new MenuEntry("スロットアイテムの個数文字の配置変更",nullptr,item_slot_suuji),
 			new MenuEntry("スロットアイテムの着色（黒）",nullptr,item_slot_color),
 			new MenuEntry("スロットアイテムの大きさ変更",nullptr,item_slot_ookisa),
@@ -110,9 +114,10 @@ namespace CTRPluginFramework
 		{
 			new MenuEntry("HP無限",hp_huan),
 			new MenuEntry("空腹度無限",kuuhuku_huan),
+			new MenuEntry("HP無限",nullptr,hp_rom),
 			new MenuEntry("ダメージ倍率変更",nullptr,dameji_bairitu),
-			new MenuEntry("プレイヤー透化",nullptr,player_toumei),
-			new MenuEntry("プレイヤー発光",nullptr,player_hakkou),
+			new MenuEntry("プレイヤー,全mob透化",nullptr,player_toumei),
+			new MenuEntry("プレイヤー,全mob発光",nullptr,player_hakkou),
 		});
 			
     }
@@ -122,7 +127,7 @@ namespace CTRPluginFramework
 		//Pluginのバージョンと説明
 		//コード提供者 : a
 		//            
-        PluginMenu *menu = new PluginMenu("MineCraft_beta", 1, 6, 2,
+        PluginMenu *menu = new PluginMenu("MineCraft_beta", 1, 6, 7,
                                             "作成者 : 姫桜大輝\nコード提供者 : rruu\n                    らいそんちょー");
 
         // メニューをフレームイベントと同期します
