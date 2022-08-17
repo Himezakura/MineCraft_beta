@@ -13,7 +13,7 @@ namespace CTRPluginFramework
     using StringVector = std::vector<std::string>;
 	
 	
-	void jump_infinity(MenuEntry *entry),
+	void jump_infinity(MenuEntry *entry);
 	void speed1(MenuEntry *entry);
 	void speed2(MenuEntry *entry);
 	void kantu(MenuEntry *entry);
