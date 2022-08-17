@@ -13,12 +13,15 @@ namespace CTRPluginFramework
     using StringVector = std::vector<std::string>;
 	
 	
+	void jump_infinity(MenuEntry *entry),
 	void speed1(MenuEntry *entry);
 	void speed2(MenuEntry *entry);
 	void kantu(MenuEntry *entry);
 	void hp_huan(MenuEntry *entry);
 	void kuuhuku_huan(MenuEntry *entry);
+	void hp_rom(MenuEntry *entry);
 	void dameji_bairitu(MenuEntry *entry);
+	void block_bairitu(MenuEntry *entry);
 	void block_wanpan(MenuEntry *entry);
 	void block_wanpan_turuhasi(MenuEntry *entry);
 	void jikan_gyaku(MenuEntry *entry);
@@ -27,6 +30,7 @@ namespace CTRPluginFramework
 	void ame_yamu(MenuEntry *entry);
 	void kaminari(MenuEntry *entry);
 	void kiri_color(MenuEntry *entry);
+	void item_slot_siroi(MenuEntry *entry);
 	void item_slot_suuji(MenuEntry *entry);
 	void item_slot_color(MenuEntry *entry);
 	void item_slot_ookisa(MenuEntry *entry);
