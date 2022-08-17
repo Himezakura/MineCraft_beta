@@ -1,13 +1,4 @@
 #include "cheats.hpp"
-
-//あらかじめ、file.binに00223300を書き込んでおく
-File developer;
-u32 buf;
-File::Open(file,"developer.bin");//developer.binを開く
-file.Read((void*)&buf, sizeof(u32));//bufにdeveloper.binの内容をu32のサイズ(4byte)分読み込む
-file.Close();//developer.binを閉じる
-//buf = 00223300;
-
 namespace CTRPluginFramework
 {
 	/* 記述例
@@ -25,7 +16,15 @@ namespace CTRPluginFramework
 	if (Controller::IsKeysDown(A))　{} ボタン実行
 	*/
 
-if (buf == 00223300){
+//無限ジャンプ
+void jump_infinity(MenuEntry *entry){
+u32 B;
+ Process::Read32(0xFFFDF38, B);
+ Process::Read32(0x0000014, B);
+ Process::Write32(B + 0x0000258, 0x01010000);
+}
+
+
 //スピードハック1
 void speed1(MenuEntry *entry){
 	Keyboard key("走りながらジャンプすると加速します", {"オン", "オフ"});
@@ -34,7 +33,7 @@ void speed1(MenuEntry *entry){
    Process::Write32(0x019870C, 0x3F8C8000);
   } else if (B == 1) {
    Process::Write32(0x019870C, 0x3F800000);
-}}}
+}}
 
 
 //スピードハック2
@@ -54,10 +53,33 @@ void kantu(MenuEntry *entry){
  int B = key.Open();
   if (B == 0) {
    Process::Write32(0x0718C84, 0xE1A01005);
+   Process::Write32(0x0718A64, 0xEA00000F);
+   Process::Write32(0x0718AB4, 0xEA000010);
+   Process::Write32(0x0718AC0, 0xEA00000D);
+   Process::Write32(0x0718B18, 0xEA00000C);
+   Process::Write32(0x0718B68, 0xEA00000D);
   } else if (B == 1) {
    Process::Write32(0x0718C84, 0xE1A01002);
+   Process::Write32(0x0718B6C, 0xE3540001);
   } else if (B == 2) {
    Process::Write32(0x0718C84, 0xE1A01007);
+   Process::Write32(0x0718B6C, 0xE3540002);
+   Process::Write32(0x0718A64, 0x0A00000F);
+   Process::Write32(0x0718AB4, 0x0A000010);
+   Process::Write32(0x0718AC0, 0x0A00000D);
+   Process::Write32(0x0718B18, 0x0A00000C);
+   Process::Write32(0x0718B68, 0x0A00000D);
+}}
+
+
+//段差を自動で登らない
+void dansa_jidou(MenuEntry *entry){
+	Keyboard key("階段やベッドを自動で登らなくなる", {"有効", "無効"});
+ int B = key.Open();
+  if (B == 0) {
+   Process::Write32(0x0718C7C, 0xEA00002C);
+  } else if (B == 1) {
+   Process::Write32(0x0718C7C, 0x0A00002C);
 }}
 
 
@@ -77,9 +99,20 @@ void kuuhuku_huan(MenuEntry *entry){
 }
 
 
+//HP無限(rom)
+void hp_rom(MenuEntry *entry){
+	Keyboard key("HP無限", {"有効", "無効"});
+ int B = key.Open();
+  if (B == 0) {
+   Process::Write32(0x0605D3C, 0xE1A05000);
+  } else if (B == 1) {
+   Process::Write32(0x0605D3C, 0xE1A05002);
+}}
+
+
 //ダメージの倍率
 void dameji_bairitu(MenuEntry *entry){
-	Keyboard key("プレイヤー、mobへのダメージ倍率変更", {"即死", "食らわない", "オフ"});
+	Keyboard key("プレイヤー、mobへのダメージ倍率変更", {"即死", "食らわない", "通常"});
  int B = key.Open();
   if (B == 0) {
    Process::Write32(0x01C3E4C, 0xF0000000);
@@ -90,9 +123,26 @@ void dameji_bairitu(MenuEntry *entry){
 }}
 
 
+//ブロック壊した時のドロップ倍率変更
+void block_bairitu(MenuEntry *entry){
+	Keyboard key("一部のブロックだけ", {"約45倍", "約16倍", "約8倍", "約2倍", "通常"});
+ int B = key.Open();
+  if (B == 0) {
+   Process::Write32(0x071EA34, 0xE3A00064);
+  } else if (B == 1) {
+   Process::Write32(0x071EA34, 0xE3A00010);
+  } else if (B == 2) {
+   Process::Write32(0x071EA34, 0xE3A00008);
+  } else if (B == 3) {
+   Process::Write32(0x071EA34, 0xE3A00002);
+  } else if (B == 4) {
+   Process::Write32(0x071EA34, 0xE3A00001);
+}}
+
+
 //ブロックワンパン
 void block_wanpan(MenuEntry *entry){
-	Keyboard key("アイテムを持っていない状態でワンパン可能", {"オン", "オフ"});
+	Keyboard key("アイテムを持っていない状態でワンパン可能", {"有効", "無効"});
  int B = key.Open();
   if (B == 0) {
    Process::Write32(0x06B1CF8, 0x50000000);
@@ -103,7 +153,7 @@ void block_wanpan(MenuEntry *entry){
 
 //ブロックワンパン(アイテム持ち)
 void block_wanpan_turuhasi(MenuEntry *entry){
-	Keyboard key("何かしらのアイテムを持っている状態でワンパン可能", {"オン", "オフ"});
+	Keyboard key("何かしらのアイテムを持っている状態でワンパン可能", {"有効", "無効"});
  int B = key.Open();
   if (B == 0) {
    Process::Write32(0x071B60C, 0x50000000);
@@ -114,7 +164,7 @@ void block_wanpan_turuhasi(MenuEntry *entry){
 
 //時間逆転
 void jikan_gyaku(MenuEntry *entry){
-	Keyboard key("朝なら夜に、夜なら朝になります(少し不安定)", {"オン", "オフ"});
+	Keyboard key("朝なら夜に、夜なら朝になります(少し不安定)", {"有効", "無効"});
  int B = key.Open();
   if (B == 0) {
    Process::Write32(0x0739640, 0xBF800000);
@@ -125,10 +175,10 @@ void jikan_gyaku(MenuEntry *entry){
 
 //世界透明化
 void sekai_toumei(MenuEntry *entry){
-	Keyboard key("全ブロック透明化（チェストとかはならない）", {"オン", "オフ"});
+	Keyboard key("", {"", ""});
  int B = key.Open();
   if (B == 0) {
-   Process::Write32(0x074F964, 0x00000000);
+   Process::Write32(0x074F964, 0x3F800000);
   } else if (B == 1) {
    Process::Write32(0x074F964, 0x3F800000);
 }}
@@ -136,7 +186,7 @@ void sekai_toumei(MenuEntry *entry){
 
 //時間変更（朝、夜）
 void jikan_henkou(MenuEntry *entry){
-	Keyboard key("時間変更(少し不安定)", {"朝", "夜", "オフ"});
+	Keyboard key("時間変更(少し不安定)", {"朝", "夜", "通常"});
  int B = key.Open();
   if (B == 0) {
    Process::Write32(0x0739638, 0x3E800000);
@@ -149,7 +199,7 @@ void jikan_henkou(MenuEntry *entry){
 
 //天候変更(雨止む)
 void ame_yamu(MenuEntry *entry){
-	Keyboard key("雨が降っている時にオン", {"オン", "オフ"});
+	Keyboard key("雨が降っている時に有効", {"有効", "無効"});
  int B = key.Open();
   if (B == 0) {
    Process::Write32(0x0649690, 0x00000000);
@@ -212,9 +262,23 @@ void kiri_color(MenuEntry *entry){
 }}
 
 
+//アイテムスロット白くなる
+void item_slot_siroi(MenuEntry *entry){
+	Keyboard key("アイテムスロット白くなる", {"有効", "無効"});
+ int B = key.Open();
+  if (B == 0) {
+   Process::Write32(0x071B5E0, 0xE3A00001);
+   Process::Write32(0x071B5E8, 0xE3E00005);
+  } else if (B == 1) {
+   Process::Write32(0x071B5E0, 0xE3A00000);
+   Process::Write32(0x071B5E8, 0xE3E00000);
+}}
+
+
+
 //アイテムの個数文字真ん中
 void item_slot_suuji(MenuEntry *entry){
-	Keyboard key("アイテムの個数文字が真ん中に配置される（ゴミコード）", {"オン", "オフ"});
+	Keyboard key("アイテムの個数文字が真ん中に配置される（ゴミコード）", {"有効", "無効"});
  int B = key.Open();
   if (B == 0) {
    Process::Write32(0x01ED2AC, 0x40000000);
@@ -249,7 +313,7 @@ void item_slot_ookisa(MenuEntry *entry){
 
 //プレイヤー透明化
 void player_toumei(MenuEntry *entry){
-	Keyboard key("透明化", {"オン", "オフ"});
+	Keyboard key("プレイヤー,全mob透明化", {"有効", "無効"});
  int B = key.Open();
   if (B == 0) {
    Process::Write32(0x019D320, 0x10000000);
@@ -262,7 +326,7 @@ void player_toumei(MenuEntry *entry){
 
 //プレイヤー発光
 void player_hakkou(MenuEntry *entry){
-	Keyboard key("プレイヤー、全mob発光(?)", {"白", "通常", "黒"});
+	Keyboard key("プレイヤー,全mob発光(?)", {"白", "通常", "黒"});
  int B = key.Open();
   if (B == 0) {
    Process::Write32(0x01D9868, 0x7FFFFFFF);
