@@ -19,9 +19,10 @@ namespace CTRPluginFramework
 //無限ジャンプ
 void jump_infinity(MenuEntry *entry){
 u32 B;
- Process::Read32(0xFFFDF38, B);
+u32 BB;
+ Process::Read32(0xFFFDF38, BB);
  Process::Read32(0x0000014, B);
- Process::Write32(B + 0x0000258, 0x01010000);
+ Process::Write32(BB + B +  0x0000258, 0x01010000);
 }
 
 
