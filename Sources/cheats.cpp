@@ -2,7 +2,7 @@
 
 
 int offset = 0;
-int data32 = 0;
+value data32 = 0;
 
 namespace CTRPluginFramework
 {
