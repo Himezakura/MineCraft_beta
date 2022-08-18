@@ -1,14 +1,14 @@
 #include "cheats.hpp"
 
-u32 offset = 0;
-offset2 = 0;
-data32 = 0;
-cmp32 = 0; 
-u16 data16 = 0;
-cmp16 = 0; 
-u8 data8 = 0;
-cmp8 = 0; 
-float dataf = 0; 
+int u32 offset = 0;
+int offset2 = 0;
+int data32 = 0;
+int cmp32 = 0; 
+int u16 data16 = 0;
+int cmp16 = 0; 
+int u8 data8 = 0;
+int cmp8 = 0; 
+int float dataf = 0; 
 
 namespace CTRPluginFramework
 {
