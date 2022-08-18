@@ -1,5 +1,8 @@
 #include "cheats.hpp"
 
+
+int offset;
+
 namespace CTRPluginFramework
 {
 	/* 記述例
