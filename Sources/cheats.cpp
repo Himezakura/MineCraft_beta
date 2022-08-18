@@ -1,7 +1,8 @@
 #include "cheats.hpp"
 
 
-int offset;
+int offset = 0;
+int data32 = 0;
 
 namespace CTRPluginFramework
 {
