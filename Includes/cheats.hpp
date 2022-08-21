@@ -38,5 +38,11 @@ namespace CTRPluginFramework
 	void player_hakkou(MenuEntry *entry);
 	void motion(MenuEntry *entry);
 	void c_kando(MenuEntry *entry);
+	void rakka0(MenuEntry *entry);
+	void siten_yura(MenuEntry *entry);
+	void asi_particle(MenuEntry *entry);
+	void asi_particle_ookisa(MenuEntry *entry);
+	void asi_particle_jikan(MenuEntry *entry);
+
 }
 #endif
