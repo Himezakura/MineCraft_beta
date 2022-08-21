@@ -124,6 +124,9 @@ namespace CTRPluginFramework
 			new MenuEntry("HP無限",nullptr,hp_rom),
 			new MenuEntry("ダメージ倍率変更",nullptr,dameji_bairitu),
 			new MenuEntry("プレイヤーモーション",nullptr,motion),
+			new MenuEntry("足元のパーティクル変更",nullptr,asi_particle),
+			new MenuEntry("プレイヤーモーション",nullptr,asi_particle_ookisa),
+
 			new MenuEntry("プレイヤー,全mob透化",nullptr,player_toumei),
 			new MenuEntry("プレイヤー,全mob発光",nullptr,player_hakkou),
 		});
