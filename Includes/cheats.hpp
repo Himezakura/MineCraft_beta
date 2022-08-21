@@ -37,6 +37,6 @@ namespace CTRPluginFramework
 	void player_toumei(MenuEntry *entry);
 	void player_hakkou(MenuEntry *entry);
 	void motion(MenuEntry *entry);
-	
+	void c_kando(MenuEntry *entry);
 }
 #endif
