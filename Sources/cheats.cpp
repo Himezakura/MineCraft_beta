@@ -22,8 +22,8 @@ void jump_infinity(MenuEntry *entry){
  u32 B;
  u32 BB;
  Process::Read32(0xFFFDF38, B);
- Process::Read32(0x00000014, BB);
- Process::Write32(B + BB +  0x0000258, 0x01010000);
+ Process::Read32(B + 0x00000014, BB);
+ Process::Write32(BB +  0x0000258, 0x01010000);
 }
 
 
@@ -369,19 +369,19 @@ void motion(MenuEntry *entry){
    Process::Write32(0x021F88C, 0x42000000);
    Process::Write32(0x021F890, 0xBDCCCCCD);
   }  else if (B == 5) {
-   Process::Write32(0x021F884, 0xBDB851EC);
-   Process::Write32(0x021F888, 0xBD4CCCCD);
-   Process::Write32(0x021F88C, 0xBD89374C);
+   Process::Write32(0x021F884, 0x3DB851EC);
+   Process::Write32(0x021F888, 0x3D4CCCCD);
+   Process::Write32(0x021F88C, 0x3D89374C);
    Process::Write32(0x021F890, 0xBDCCCCCD);
 }}
 
 
 //cスティック感度変更
 void c_kando(MenuEntry *entry){
- static u32 B = 1;
+ static u8 B = 4;
   Keyboard key("cスティックの感度を入力\n\ndefault:40400000");
   key.Open(B);
-  Process::Write32(0x010B4D4, B);
+  Process::Write32(0x010B4D4, 0x40000000 + B * 100000);
 }
 
 
