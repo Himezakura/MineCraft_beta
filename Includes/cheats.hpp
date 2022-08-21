@@ -36,6 +36,7 @@ namespace CTRPluginFramework
 	void item_slot_ookisa(MenuEntry *entry);
 	void player_toumei(MenuEntry *entry);
 	void player_hakkou(MenuEntry *entry);
+	void motion(MenuEntry *entry);
 	
 }
 #endif
