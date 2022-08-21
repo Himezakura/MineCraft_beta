@@ -108,6 +108,13 @@ namespace CTRPluginFramework
 			new MenuEntry("雷降らす(強制)/act固定",nullptr,kaminari),
 			new MenuEntry("霧の色変更",nullptr,kiri_color),
 		});
+
+
+		menu += new MenuFolder(Color::Lime<< "視点系","",
+		{
+			new MenuEntry("cスティック感度変更",nullptr,c_kando),
+		});
+
 		
 		
 		menu += new MenuFolder(Color::Lime<< "プレイヤー系", "",
@@ -116,6 +123,7 @@ namespace CTRPluginFramework
 			new MenuEntry("空腹度無限",kuuhuku_huan),
 			new MenuEntry("HP無限",nullptr,hp_rom),
 			new MenuEntry("ダメージ倍率変更",nullptr,dameji_bairitu),
+			new MenuEntry("プレイヤーモーション",nullptr,motion),
 			new MenuEntry("プレイヤー,全mob透化",nullptr,player_toumei),
 			new MenuEntry("プレイヤー,全mob発光",nullptr,player_hakkou),
 		});
