@@ -381,9 +381,79 @@ void c_kando(MenuEntry *entry){
  static u8 B = 4;
   Keyboard key("cスティックの感度を入力\n\ndefault:40400000");
   key.Open(B);
-  Process::Write32(0x010B4D4, 0x40000000 + B * 100000);
+  Process::Write32(0x010B4D4, 0x40000000 + 0xB * 0x186A0);
 }
 
+
+//落下ダメージ0
+void rakka0(MenuEntry *entry){
+	Keyboard key("落下ダメージ0", {"有効", "無効"});
+ int B = key.Open();
+  if (B == 0) {
+   Process::Write32(0x0195F58, 0x7FFFFFFF);
+  } else if (B == 1) {
+   Process::Write32(0x0195F58, 0x40400000);
+}}
+
+
+//走ると視点ゆらゆら
+void siten_yura(MenuEntry *entry){
+	Keyboard key("視点ゆらゆら(長時間はやめた方がいい)", {"有効", "無効"});
+ int B = key.Open();
+  if (B == 0) {
+   Process::Write32(0x03CF294, 0x42000000);
+  } else if (B == 1) {
+   Process::Write32(0x03CF294, 0x40400000);
+}}
+
+
+//足のパーティクル変更
+void asi_particle(MenuEntry *entry){
+	Keyboard key("いろんなパーティクルが出たりするよ", {"青", "紫", "カラフル", "黒", "データ(?)", "通常"});
+ int B = key.Open();
+  if (B == 0) {
+   Process::Write32(0x065D754, 0xC5000000);
+  } else if (B == 1) {
+   Process::Write32(0x065D754, 0xC0400000);
+  } else if (B == 2) {
+   Process::Write32(0x065D754, 0xC2400000);
+  } else if (B == 3) {
+   Process::Write32(0x065D754, 0x70000000);
+  } else if (B == 4) {
+   Process::Write32(0x065D754, 0x7FFFFFFF);
+  } else if (B == 5) {
+   Process::Write32(0x065D754, 0x40400000);
+}}
+
+
+//足のパーティクルの大きさ変更
+void asi_particle_ookisa(MenuEntry *entry){
+	Keyboard key("足のパーティクルの大きさ変更", {"大きい", "通常", "消す"});
+ int B = key.Open();
+  if (B == 0) {
+   Process::Write32(0x065D758, 0x40A00000);
+  } else if (B == 1) {
+   Process::Write32(0x065D758, 0x3F000000);
+  } else if (B == 2) {
+   Process::Write32(0x065D758, 0x00000000);
+}}
+
+
+//足のパーティクルの消える時間変更
+void asi_particle_jikan(MenuEntry *entry){
+	Keyboard key("足のパーティクルの消える時間差を変更", {"約15秒", "約5秒", "通常(約0.6秒)", "約0.1秒", "0秒"});
+ int B = key.Open();
+  if (B == 0) {
+   Process::Write32(0x065D760, 0x43000000);
+  } else if (B == 1) {
+   Process::Write32(0x065D760, 0x42000000);
+  } else if (B == 2) {
+   Process::Write32(0x065D758, 0x40800000);
+  } else if (B == 3) {
+   Process::Write32(0x065D758, 0x3F800000);
+  } else if (B == 4) {
+   Process::Write32(0x065D758, 0x00000000);
+}}
 
 
 
