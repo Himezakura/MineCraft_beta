@@ -339,6 +339,43 @@ void player_hakkou(MenuEntry *entry){
 }}
 
 
+//モーション系
+void motion(MenuEntry *entry){
+	Keyboard key("選択", {"Yの字", "ぐるぐる", "腕組む", "腕ぶんぶん", "腕広げる", "通常"});
+ int B = key.Open();
+  if (B == 0) {
+   Process::Write32(0x021F884, 0x41000000);
+   Process::Write32(0x021F888, 0x43000000);
+   Process::Write32(0x021F88C, 0x41000000);
+   Process::Write32(0x021F890, 0x00000000);
+  } else if (B == 1) {
+   Process::Write32(0x021F884, 0xBDB851EC);
+   Process::Write32(0x021F888, 0x42000000);
+   Process::Write32(0x021F88C, 0xBD89374C);
+   Process::Write32(0x021F890, 0xBDCCCCCD);
+  }  else if (B == 2) {
+   Process::Write32(0x021F884, 0x00000000);
+   Process::Write32(0x021F888, 0x43000000);
+   Process::Write32(0x021F88C, 0x00000000);
+   Process::Write32(0x021F890, 0xBDCCCCCD);
+  }  else if (B == 3) {
+   Process::Write32(0x021F884, 0xBF800000);
+   Process::Write32(0x021F888, 0x3F800000);
+   Process::Write32(0x021F88C, 0x00000000);
+   Process::Write32(0x021F890, 0xBDCCCCCD);
+  }  else if (B == 4) {
+   Process::Write32(0x021F884, 0x00000000);
+   Process::Write32(0x021F888, 0x42000000);
+   Process::Write32(0x021F88C, 0x42000000);
+   Process::Write32(0x021F890, 0xBDCCCCCD);
+  }  else if (B == 5) {
+   Process::Write32(0x021F884, 0xBDB851EC);
+   Process::Write32(0x021F888, 0xBD4CCCCD);
+   Process::Write32(0x021F88C, 0xBD89374C);
+   Process::Write32(0x021F890, 0xBDCCCCCD);
+}}
+
+
 
 
 
