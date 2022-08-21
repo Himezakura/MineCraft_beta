@@ -1,9 +1,5 @@
 #include "cheats.hpp"
 
-
-int offset = 0;
-value data32 = 0;
-
 namespace CTRPluginFramework
 {
 	/* 記述例
@@ -23,11 +19,11 @@ namespace CTRPluginFramework
 
 //無限ジャンプ
 void jump_infinity(MenuEntry *entry){
- Process::Read32(0xFFFDF38, data32);
- offset = data32;
- Process::Read32(offset + 0x0000014, data32);
- offset = data32;
- Process::Write32(offset + 0x0000258, 0x01010000);
+ u32 B;
+ u32 BB;
+ Process::Read32(0xFFFDF38, B);
+ Process::Read32(0x00000014, BB);
+ Process::Write32(B + BB +  0x0000258, 0x01010000);
 }
 
 
