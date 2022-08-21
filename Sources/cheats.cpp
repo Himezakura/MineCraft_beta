@@ -376,6 +376,14 @@ void motion(MenuEntry *entry){
 }}
 
 
+//cスティック感度変更
+void c_kando(MenuEntry *entry){
+ static u32 B = 1;
+  Keyboard key("cスティックの感度を入力\n\ndefault:40400000");
+  key.Open(B);
+  Process::Write32(0x010B4D4, B);
+}
+
 
 
 
