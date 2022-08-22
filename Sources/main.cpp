@@ -127,13 +127,11 @@ namespace CTRPluginFramework
 			new MenuEntry("落下ダメージ食らわない",nullptr,rakka0),
 			new MenuEntry("ダメージ倍率変更",nullptr,dameji_bairitu),
 			new MenuEntry("プレイヤーモーション",nullptr,motion),
-			new MenuEntry("足元のパーティクル変更",nullptr,asi_particle),
-			new MenuEntry("プレイヤーモーション",nullptr,asi_particle_ookisa),
 			new MenuEntry("プレイヤー,全mob透化",nullptr,player_toumei),
 			new MenuEntry("プレイヤー,全mob発光",nullptr,player_hakkou),
 			new MenuEntry("足元のパーティクル変更",nullptr,asi_particle),
-			new MenuEntry("足元のパーティクル変更",nullptr,asi_particle_ookisa),
-			new MenuEntry("足元のパーティクル変更",nullptr,asi_particle_jikan),
+			new MenuEntry("足元のパーティクル大きさ変更",nullptr,asi_particle_ookisa),
+			new MenuEntry("足元のパーティクル残時間変更",nullptr,asi_particle_jikan),
 
 		});
 			
