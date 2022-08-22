@@ -141,14 +141,15 @@ namespace CTRPluginFramework
 
     int     main(void)
     {
-		//Pluginのバージョンと説明
-		//コード提供者 : a
-		//            
-        PluginMenu *menu = new PluginMenu("MineCraft_beta", 1, 6, 7,
+	// Pluginのバージョンと説明
+        PluginMenu *menu = new PluginMenu("MineCraft_beta", 1, 8, 0,
                                             "作成者 : 姫桜大輝\nコード提供者 : rruu\n                    らいそんちょー");
 
         // メニューをフレームイベントと同期します
         menu->SynchronizeWithFrame(true);
+
+        // 「Plugin Leady!!」の文字を変える
+        OSD::Notify(Color::deepskyblue << "MineCraft3gx!!");
 
         // メニューエントリとフォルダを初期化する
         InitMenu(*menu);
