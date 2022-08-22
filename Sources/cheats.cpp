@@ -456,6 +456,16 @@ void asi_particle_jikan(MenuEntry *entry){
 }}
 
 
+//無限ジャンプ(rom)
+void jump_infinity_rom(MenuEntry *entry){
+	Keyboard key("こっちだとジャンプ中にダッシュが出来なくなるが安定している", {"有効", "無効"});
+ int B = key.Open();
+  if (B == 0) {
+   Process::Write32(0x04EC270, 0xE3500006);
+  } else if (B == 1) {
+   Process::Write32(0x04EC270, 0xE3500000);
+}}
+
 
 
 
