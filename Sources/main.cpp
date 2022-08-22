@@ -75,7 +75,8 @@ namespace CTRPluginFramework
        menu += new MenuFolder(Color::Lime<< "移動系", "",
 		{
 
-			new MenuEntry("無限ジャンプ",jump_infinity),
+			new MenuEntry("無限ジャンプ",jump_infinity,"movとブロックの差が2ブロック以内の場合はジャンプ出来なくなる"),
+			new MenuEntry("無限ジャンプ",nullptr,jump_infinity_rom),
 			new MenuEntry("スピードハック1",nullptr,speed1),
 			new MenuEntry("スピードハック2",nullptr,speed2),
 			new MenuEntry("貫通系",nullptr,kantu),
@@ -122,13 +123,17 @@ namespace CTRPluginFramework
 			new MenuEntry("HP無限",hp_huan),
 			new MenuEntry("空腹度無限",kuuhuku_huan),
 			new MenuEntry("HP無限",nullptr,hp_rom),
+			new MenuEntry("落下ダメージ食らわない",nullptr,rakka0),
 			new MenuEntry("ダメージ倍率変更",nullptr,dameji_bairitu),
 			new MenuEntry("プレイヤーモーション",nullptr,motion),
 			new MenuEntry("足元のパーティクル変更",nullptr,asi_particle),
 			new MenuEntry("プレイヤーモーション",nullptr,asi_particle_ookisa),
-
 			new MenuEntry("プレイヤー,全mob透化",nullptr,player_toumei),
 			new MenuEntry("プレイヤー,全mob発光",nullptr,player_hakkou),
+			new MenuEntry("足元のパーティクル変更",nullptr,asi_particle),
+			new MenuEntry("足元のパーティクル変更",nullptr,asi_particle_ookisa),
+			new MenuEntry("足元のパーティクル変更",nullptr,asi_particle_jikan),
+
 		});
 			
     }
