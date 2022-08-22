@@ -462,6 +462,14 @@ void jump_infinity_rom(MenuEntry *entry){
 }}
 
 
+void screenTest(const Screen &screen) {
+
+    screen.Draw("Hello", 0, 0, Color::White, Color::Black);
+
+    // 色を指定しなくてもOK(通常は文字が白、背景が黒)
+    screen.Draw("Hello", 0, 10);
+}
+
 
 
 
