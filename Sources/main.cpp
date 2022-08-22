@@ -149,7 +149,7 @@ namespace CTRPluginFramework
         menu->SynchronizeWithFrame(true);
 
         // 「Plugin Leady!!」の文字を変える
-        OSD::Notify(Color(0,191,255) << "MineCraft3gx!!");
+        OSD::Notify(Color(0,191,255) << "MineCraft3gx Loaded");
 
         // メニューエントリとフォルダを初期化する
         InitMenu(*menu);
