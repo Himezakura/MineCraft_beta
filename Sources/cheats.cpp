@@ -376,7 +376,7 @@ void c_kando(MenuEntry *entry){
  static u8 Cst = 4;
   Keyboard key("cスティックの感度を入力\n\ndefault:4\n現在:" + Cst);
   key.Open(Cst);
-  Process::Write32(0x010B4D4, 0x40000000 + 0xCst * 0x100000);
+  Process::Write32(0x010B4D4, 0x40000000 + Cst * 0x100000);
 }
 
 
