@@ -14,6 +14,7 @@ namespace CTRPluginFramework
 	
 	
 	void jump_infinity(MenuEntry *entry);
+	void jump_infinity_rom(MenuEntry *entry);
 	void speed1(MenuEntry *entry);
 	void speed2(MenuEntry *entry);
 	void kantu(MenuEntry *entry);
