@@ -114,6 +114,7 @@ namespace CTRPluginFramework
 		menu += new MenuFolder(Color::Lime<< "視点系","",
 		{
 			new MenuEntry("cスティック感度変更",nullptr,c_kando),
+			new MenuEntry("走る時の視点感度",nullptr,siten_yura),
 		});
 
 		
