@@ -55,11 +55,6 @@ void kantu(MenuEntry *entry){
  int B = key.Open();
   if (B == 0) {
    Process::Write32(0x0718C84, 0xE1A01005);
-   Process::Write32(0x0718A64, 0xEA00000F);
-   Process::Write32(0x0718AB4, 0xEA000010);
-   Process::Write32(0x0718AC0, 0xEA00000D);
-   Process::Write32(0x0718B18, 0xEA00000C);
-   Process::Write32(0x0718B68, 0xEA00000D);
   } else if (B == 1) {
    Process::Write32(0x0718C84, 0xE1A01002);
    Process::Write32(0x0718B6C, 0xE3540001);
@@ -378,10 +373,10 @@ void motion(MenuEntry *entry){
 
 //cスティック感度変更
 void c_kando(MenuEntry *entry){
- static u8 B = 4;
-  Keyboard key("cスティックの感度を入力\n\ndefault:40400000");
+ static u8 Cst = 4;
+  Keyboard key("cスティックの感度を入力\n\ndefault:4\n現在:" + Cst);
   key.Open(B);
-  Process::Write32(0x010B4D4, 0x40000000 + 0xB * 0x186A0);
+  Process::Write32(0x010B4D4, 0x40000000 + 0xCst * 0x100000);
 }
 
 
