@@ -132,7 +132,7 @@ namespace CTRPluginFramework
 			new MenuEntry("足元のパーティクル変更",nullptr,asi_particle),
 			new MenuEntry("足元のパーティクル大きさ変更",nullptr,asi_particle_ookisa),
 			new MenuEntry("足元のパーティクル残時間変更",nullptr,asi_particle_jikan),
-			new MenuEntry("screen test",screenTest),
+			new MenuEntry::FuncPointer("screen test",screenTest),
 
 		});
 			
