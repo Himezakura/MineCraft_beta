@@ -443,11 +443,11 @@ void asi_particle_jikan(MenuEntry *entry){
   } else if (B == 1) {
    Process::Write32(0x065D760, 0x42000000);
   } else if (B == 2) {
-   Process::Write32(0x065D758, 0x40800000);
+   Process::Write32(0x065D760, 0x40800000);
   } else if (B == 3) {
-   Process::Write32(0x065D758, 0x3F800000);
+   Process::Write32(0x065D760, 0x3F800000);
   } else if (B == 4) {
-   Process::Write32(0x065D758, 0x00000000);
+   Process::Write32(0x065D760, 0x00000000);
 }}
 
 
