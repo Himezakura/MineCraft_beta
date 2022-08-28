@@ -462,16 +462,30 @@ void jump_infinity_rom(MenuEntry *entry){
 }}
 
 
-void screenTest(const Screen &screen) {
-
-    screen.Draw("Hello", 0, 0, Color::White, Color::Black);
-
-    // 色を指定しなくてもOK(通常は文字が白、背景が黒)
-    screen.Draw("Hello", 0, 10);
-}
-
-
-
+//演算機能
+void enzan(MenuEntry *entry){
+ static u32 let1 = 0;
+  Keyboard key("1文字目を入力");
+  key.Open(let1);
+  Keyboard key("計算する演算子を選んでください", {"+(足し算)", "-(引き算)", "×(かけ算)", "÷(わり算)"});
+  int E = key.Open();
+   if (E == 0) {
+    static u32 let2 = 0;
+    Keyboard key("2文字目を入力");
+    key.Open(let2);
+  } else if (E == 1) {
+    static u32 let2 = 0;
+    Keyboard key("2文字目を入力");
+    key.Open(let2);
+  } else if (E == 2) {
+    static u32 let2 = 0;
+    Keyboard key("2文字目を入力");
+    key.Open(let2);
+  } else if (E == 3) {
+    static u32 let2 = 0;
+    Keyboard key("2文字目を入力");
+    key.Open(let2);
+}}
 
 
 
