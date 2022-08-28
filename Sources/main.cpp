@@ -147,7 +147,10 @@ namespace CTRPluginFramework
         // メニューをフレームイベントと同期します
         menu->SynchronizeWithFrame(true);
 
-        // 「Plugin Leady!!」の文字を変える
+	// 起動時に「Plugin ready!」を表示する(false)か非表示(true)か
+	menu->ShowWelcomeMessage(true);
+
+        // 「Plugin Leady!」と別に文字を表示
         OSD::Notify(Color(0,191,255) << "MineCraft3gx Loaded");
 
         // メニューエントリとフォルダを初期化する
