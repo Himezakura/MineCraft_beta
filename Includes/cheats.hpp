@@ -44,7 +44,7 @@ namespace CTRPluginFramework
 	void asi_particle(MenuEntry *entry);
 	void asi_particle_ookisa(MenuEntry *entry);
 	void asi_particle_jikan(MenuEntry *entry);
-	void screenTest(const Screen &screen);
+	void siten_idou(MenuEntry *entry);
 
 }
 #endif
