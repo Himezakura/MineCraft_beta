@@ -132,7 +132,7 @@ namespace CTRPluginFramework
 			new MenuEntry("足元のパーティクル変更",nullptr,asi_particle),
 			new MenuEntry("足元のパーティクル大きさ変更",nullptr,asi_particle_ookisa),
 			new MenuEntry("足元のパーティクル残時間変更",nullptr,asi_particle_jikan),
-			new MenuEntry("計算機",nullptr,enzan),
+			new MenuEntry("Cheat Name Unknown",scr),
 
 		});
 			
@@ -148,7 +148,7 @@ namespace CTRPluginFramework
         menu->SynchronizeWithFrame(true);
 
 	// 起動時に「Plugin ready!」を表示する(false)か非表示(true)か
-	menu->ShowWelcomeMessage(true);
+	menu->ShowWelcomeMessage(false);
 
         // 「Plugin Leady!」と別に文字を表示
         OSD::Notify(Color(0,191,255) << "MineCraft3gx Loaded");
