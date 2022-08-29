@@ -462,40 +462,11 @@ void jump_infinity_rom(MenuEntry *entry){
 }}
 
 
-//演算機能
-void enzan(MenuEntry *entry){
- int let1 = 0;
-  Keyboard key("1文字目を入力");
-  key.Open(let1);
-  Keyboard key("計算する演算子を選んでください", {"+(足し算)", "-(引き算)", "×(かけ算)", "÷(わり算)"});
-  int E = key.Open();
-   if (E == 0) {
-    int let2 = 0;
-    Keyboard key("2文字目を入力");
-    key.Open(let2);
-    int ans = let1 + let2;
-    MessageBox("答え", ans)();
-  } else if (E == 1) {
-    int let2 = 0;
-    Keyboard key("2文字目を入力");
-    key.Open(let2);
-    int ans = let1 + let2;
-    MessageBox("答え", ans)();
-  } else if (E == 2) {
-    int let2 = 0;
-    Keyboard key("2文字目を入力");
-    key.Open(let2);
-    int ans = let1 + let2;
-    MessageBox("答え", ans)();
-  } else if (E == 3) {
-    int let2 = 0;
-    Keyboard key("2文字目を入力");
-    key.Open(let2);
-    int ans = let1 + let2;
-    MessageBox("答え", ans)();
-}}
-
-
+//test
+void scr(MenuEntry *entry){
+    // 座標(0, 0)に点を描画
+    screen.DrawPixel(0, 0, Color::White);
+}
 
 
 
