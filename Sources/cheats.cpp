@@ -465,7 +465,7 @@ void jump_infinity_rom(MenuEntry *entry){
 //test
 void scr(const Screen &screen MenuEntry *entry){
     // 座標(0, 0)に点を描画
-    Screen.DrawPixel(0, 0, Color::White);
+    screen.DrawPixel(0, 0, Color::White);
 }
 
 
